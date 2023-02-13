@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
  <HEAD>
-  <TITLE> New Document </TITLE>
+  <TITLE> ♥ </TITLE>
   <META NAME="Generator" CONTENT="EditPlus">
   <META NAME="Author" CONTENT="">
   <META NAME="Keywords" CONTENT="">
@@ -18,11 +18,29 @@ canvas {
   width: 100%;
   height: 100%;
 }
+.top{
+  text-align: center;
+  font-size: 50px;
+  font-weight: 600;
+  margin-top: 20px;
+  color: #ea80b0;
+}
+.bottom{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 50px;
+  font-weight: 600;
+  bottom: 20px;
+  color: #ea80b0;
+}
   </style>
  </HEAD>
  
  <BODY>
+  <div class="top" id="blink">我的慧宝宝，永远爱你！</div>
   <canvas id="pinkboard"></canvas>
+  <div class="bottom">此生余生都是你♥</div>
   <script>
   /*
  * Settings
@@ -36,7 +54,19 @@ var settings = {
     size:      30, // particle size in pixels
   },
 };
- 
+
+function blinklink() {
+    if (!document.getElementById('blink').style.color) {
+        document.getElementById('blink').style.color = "#b53b72";
+    }
+    if (document.getElementById('blink').style.color == "#b53b72") {
+        document.getElementById('blink').style.color = "#ea80b0";
+    } else {
+        document.getElementById('blink').style.color = "#b53b72";
+    }
+    timer = setTimeout("blinklink()", 500);
+}
+//blinklink();
 /*
  * RequestAnimationFrame polyfill by Erik Möller
  */
